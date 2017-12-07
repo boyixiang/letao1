@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,43 @@
     <link rel="stylesheet" href="../manage_my/css/base.css">
     <link rel="stylesheet" href="../manage_my/css/login.css">
 </head>
+
 <body>
-    
+    <div class="contaner">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h4 class="text-center">后台管理系统</h4>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="username" class="form-control" id="inputEmail3" placeholder="请输入用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+                                <div class="col-sm-9">
+                                    <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-7">
+                                    <button type="submit" class="btn btn-default">重置</button>
+                                    <button type="submit" class="btn btn-info pull-right">登录</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
 <script src="../manage_my/lib/jquery/jquery.min.js"></script>
 <script src="../manage_my/lib/bootstrap/js/bootstrap.min.js"></script>
