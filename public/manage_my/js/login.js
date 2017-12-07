@@ -32,7 +32,7 @@ $(function () {
                         regexp: /^[a-zA-Z0-9_\.]+$/,
                         message: '用户名由数字字母下划线和.组成'
                     },
-                    callback:{
+                    callback: {
                         message: '用户名错误'
                     }
                 }
@@ -57,6 +57,7 @@ $(function () {
     }).on('success.form.bv', function (e) {
         e.preventDefault();
         //使用ajax提交逻辑
+        NProgress.start();
         $.ajax({
             url: '/employee/employeeLogin',
             data: $('form').serialize(),
@@ -64,16 +65,25 @@ $(function () {
             success: function (backdata) {
                 console.log(backdata);
                 if (backdata.success) {
-                    window.location = './index.html';
+                    setTimeout(function () {
+                        NProgress.done();
+                        window.location = './index.html';
+                    }, 1000)
+                    
                 } else {
                     var validator = $("form").data('bootstrapValidator');
                     if (backdata.error == 1000) {
                         pdateStatus('username', 'INVALID', 'callback');
-                    }else if(backdata.error == 1001){
+                    } else if (backdata.error == 1001) {
                         pdateStatus('password', 'INVALID', 'callback');
                     }
                 }
             }
         })
+
     });
+    $('button[type=reset]').click(function(){
+        var validator = $("form").data('bootstrapValidator'); 
+        validator.resetForm();
+    })
 })
