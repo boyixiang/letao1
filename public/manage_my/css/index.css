@@ -41,7 +41,7 @@ body {
         color: #fff;
         margin-left: 10px;
     }
-    .slide .menu li a {
+    .slide .menu li >a{
         display: block;
         height: 40px;
         color: #666;

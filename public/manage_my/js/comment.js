@@ -29,4 +29,9 @@ $(function () {
         $('.slide').toggle();
         $('.main').toggleClass('main-fullscreen');
     })
+    //点击显示隐藏分类
+    $('.slide .menu ul >li:eq(1)').click(function(){
+        console.log('...');
+        $(this).children('ol').slideToggle();
+    })
 })
