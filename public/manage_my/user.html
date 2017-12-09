@@ -51,7 +51,7 @@
             </ul>
         </div>
     </div>
-    
+
     <div class="main">
         <div class="header">
             <a href="javascript:;" class="glyphicon glyphicon-align-justify pull-left"></a>
@@ -64,6 +64,31 @@
                 </li>
                 <li>用户管理</li>
             </ol>
+            <!-- bs 表单 -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>手机号</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">删除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 分页必须模块 -->
+            <ul id="pagintor"></ul>
         </div>
     </div>
     <!--退出 模态框 -->
@@ -77,7 +102,8 @@
                     <h4 class="modal-title">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>你确定要退出后台管理系统嘛?</p>
+                    <p class="text-danger">
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>你确定要退出后台管理系统嘛?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -87,7 +113,37 @@
         </div>
     </div>
 </body>
+
 </html>
+<!-- jq插件 -->
 <script src="./lib/jquery/jquery.min.js"></script>
+<!-- bs插件js -->
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 调用模板引擎 -->
+<script src="./lib/artTemplate/template.js"></script>
+<!-- 模板块 -->
+<script id='userTmp' type="text/html">
+    {{each rows}}
+    <tr>
+        <td>{{(page-1)*size+1+$index}}</td>
+        <td>{{$value.username}}</td>
+        <td>{{$value.mobile}}</td>
+        <td>
+            {{if $value.isDelete==1}} 正常 {{else}} 已禁用 {{/if}}
+        </td>
+        <td data-id="{{$value.id}}">
+            {{if $value.isDelete==1}}
+            <button type="button" class="btn btn-danger">禁用</button>
+            {{else}}
+            <button type="button" class="btn btn-success">启用</button>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<!-- 分页插件js -->
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!-- 公共js -->
 <script src="./js/comment.js"></script>
+<!-- 自己js -->
+<script src="./js/user.js"></script>

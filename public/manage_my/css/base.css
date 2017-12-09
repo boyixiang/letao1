@@ -106,3 +106,9 @@ ol,ul{
 .main .content{
     padding: 20px 20px 0;
 }
+table{
+    text-align: center;
+}
+th{
+    text-align: center;
+}
