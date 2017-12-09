@@ -70,9 +70,11 @@ body {
 /* 侧边栏结束 */
 
 /* 右边菜单 */
-
 .main{
     padding-left: 180px;
+}
+.main.main-fullscreen{
+    padding: 0;
 }
 .main .header{
     height: 50px;
