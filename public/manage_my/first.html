@@ -54,7 +54,7 @@
     <div class="main">
         <div class="header">
             <a href="javascript:;" class="glyphicon glyphicon-align-justify pull-left"></a>
-            <a href="javascript:;" class="glyphicon glyphicon-log-out pull-right" data-toggle="modal" data-target=".bs-example-modal-sm"></a>
+            <a href="javascript:;" class="glyphicon glyphicon-log-out pull-right" data-toggle="modal" data-target=".bs-example1-modal-sm"></a>
         </div>
         <div class="content clearfix">
             <ol class="breadcrumb">
@@ -66,6 +66,29 @@
                 </li>
                 <li>一级分类</li>
             </ol>
+            <!-- 添加按钮 -->
+            <button type="button" class="btn btn-default mb" data-toggle="modal" data-target=".bs-example-modal1-sm">添加分类</button>
+
+            <div class="modal fade bs-example-modal1-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>One fine body&hellip;</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- 表格内容 -->
             <table class="table table-bordered">
                 <thead>
@@ -114,10 +137,10 @@
 <script src="./lib/artTemplate/template.js"></script>
 <script id='firstTmp' type="text/html">
     {{each rows}}
-        <tr data-id="{{$value.id}}">
-            <td width="20%">{{(page-1)*5+1+$index}}</td>
-            <td width="80%">{{$value.categoryName}}</td>
-        </tr>
+    <tr data-id="{{$value.id}}">
+        <td width="20%">{{(page-1)*5+1+$index}}</td>
+        <td width="80%">{{$value.categoryName}}</td>
+    </tr>
     {{/each}}
 </script>
 <!-- 引入分页插件 -->

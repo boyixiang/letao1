@@ -112,3 +112,7 @@ table{
 th{
     text-align: center;
 }
+/* 公用类样式 */
+.mb{
+    margin-bottom: 30px;
+}
