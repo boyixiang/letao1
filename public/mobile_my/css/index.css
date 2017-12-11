@@ -1,0 +1,57 @@
+
+.lt_main .shoe{
+    padding: 10px;
+}
+.lt_main .shoe ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.lt_main .shoe ul li{
+    width: 33.333333%;
+}
+.lt_main .shoe ul li a{
+    width: 100%;
+}
+.lt_main .shoe ul li img{
+    width: 100%;
+}
+.lt_main .lt_product{
+    padding: 10px;
+}
+.lt_main .lt_product ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.lt_main .lt_product ul li{
+    width: 48%;
+    background-color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.lt_main .lt_product ul li a{
+    width: 100%;
+    display: block;
+    padding: 10px;
+}
+.lt_main .lt_product ul li img{
+    width: 100%;
+}
+.lt_main .lt_product ul li p{
+    font-size: 16px;
+    color: skyblue;
+}
+.lt_main .lt_product ul li span:first-of-type{
+    color: red;
+    font-size: 14px;
+}
+.lt_main .lt_product ul li span:last-of-type{
+    font-size: 14px;
+    color: gray;
+    /* 加中划线 */
+    text-decoration: line-through;
+}
+.lt_main .lt_product ul li button{
+    padding: 5px 10px;
+    background-color: deepskyblue;
+}
